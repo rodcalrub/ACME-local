@@ -8,15 +8,15 @@ docker volume create --name=logsvol
 docker volume create --name=datavol
 
 #Development
-# export NODE_ENV=production
-# export PORT=8081
-# export DBPORT=27018
-# export HOSTNAME=development.${BASE_SITE}
-# export VIRTUAL_HOST=${HOSTNAME}
-# export VIRTUAL_PORT=${PORT}
-# export DBSTRING="mongodb://mongo${DBPORT}:${DBPORT}/acme-explorer-${NODE_ENV}";
-# source secrets.sh
-# docker-compose -p ${HOSTNAME} up -d
+export NODE_ENV=production
+export PORT=8001
+export DBPORT=27017
+export HOSTNAME=development.${BASE_SITE}
+export VIRTUAL_HOST=${HOSTNAME}
+export VIRTUAL_PORT=${PORT}
+export DBSTRING="mongodb://mongo${DBPORT}:${DBPORT}/acme-explorer-development";
+source secrets.sh
+docker-compose -p ${HOSTNAME} up -d
 
 # #Production
 export NODE_ENV=production
